@@ -1,0 +1,10 @@
+---
+- hosts: localhost 
+
+  tasks:
+    - name: clone/update ansible-playbooks repo 
+      git:
+        repo: https://www.github.com/jamesnearn/ansible-playbooks.git
+        dest: /etc/ansible/ansible-playbooks
+        update: yes
+
