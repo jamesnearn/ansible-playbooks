@@ -7,4 +7,11 @@
         repo: https://www.github.com/jamesnearn/ansible-playbooks.git
         dest: /etc/ansible/ansible-playbooks
         update: yes
-
+    - name: cron common.hourly.yml
+      cron:
+        name: 'ansible-playbooks common.hourly.yml'
+        minute: "0"
+        hour: "0"
+        user: root
+        job: "ansible-playbook /etc/ansible/ansible-playbooks common.hourly.yml"
+        cron_file: ansible.common.hourly
